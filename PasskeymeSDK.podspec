@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
     s.summary          = 'A simple SDK for integrating passkeys with Passkeyme.com'
   
     s.description      = <<-DESC
-                         PasskeysSDK is a simple SDK for integrating passkeys into your iOS applications.
+                         PasskeymeSDK is a simple SDK for integrating passkeys into your iOS applications.
                          DESC
   
     s.homepage         = 'https://passkeyme.com'
