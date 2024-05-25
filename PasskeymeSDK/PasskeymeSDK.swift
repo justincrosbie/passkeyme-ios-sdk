@@ -1,23 +1,30 @@
 import Foundation
 import AuthenticationServices
 
-public class PasskeymeSDK {
+extension NSNotification.Name {
+    static let UserSignedIn = Notification.Name("UserSignedInNotification")
+    static let ModalSignInSheetCanceled = Notification.Name("ModalSignInSheetCanceledNotification")
+}
+
+public class PasskeymeSDK : NSObject, ASAuthorizationControllerPresentationContextProviding, ASAuthorizationControllerDelegate {
     
-    public init() {}
+    var authenticationAnchor: ASPresentationAnchor?
+    var completion: (Result<String, Error>) -> Void = { _ in }
+    var isPerformingModalReqest = false
     
-    public func passkeyRegister(challenge: String, completion: @escaping (Result<String, Error>) -> Void) {
-        let data = challenge.data(using: .utf8) {
-        do {
+    public func passkeyRegister(challenge: String, anchor: ASPresentationAnchor, completion: @escaping (Result<String, Error>) -> Void) {
+
+        self.completion = completion
+        self.authenticationAnchor = anchor
+
+        if let data = challenge.data(using: .utf8) {
             // Use a Codable struct or dictionary to represent the data
             let regChallenge = try! JSONDecoder().decode(RegisterChallenge.self, from: data)
 
-            let domain = regChallenge.publicKey.rp.id
             let username = regChallenge.publicKey.user.name
             let rpID = regChallenge.publicKey.rp.id
             let userIDData = regChallenge.publicKey.user.id.data(using: .utf8)!
             let challengeData = Data(regChallenge.publicKey.challenge.utf8)
-
-            let publicKeyCredentialProvider = ASAuthorizationPlatformPublicKeyCredentialProvider(relyingPartyIdentifier: domain)
 
             // Create the Credential Provider with the specified RP ID
             let provider = ASAuthorizationPlatformPublicKeyCredentialProvider(relyingPartyIdentifier: rpID)
@@ -36,19 +43,24 @@ public class PasskeymeSDK {
             authController.presentationContextProvider = self
             authController.performRequests()
             isPerformingModalReqest = true
-        } catch {
-            call.reject("Invalid JSON data")
+        } else {
+            completion(.failure(NSError(domain: "PasskeymeSDK", code: -1, userInfo: [NSLocalizedDescriptionKey: "No data"])))
         }
     }
     
-    public func passkeyAuthenticate(challenge: String, completion: @escaping (Result<String, Error>) -> Void) {
-        let data = challenge.data(using: .utf8) {
-        do {
+    public func passkeyAuthenticate(challenge: String, anchor: ASPresentationAnchor, completion: @escaping (Result<String, Error>) -> Void) {
+
+        self.completion = completion
+        self.authenticationAnchor = anchor
+        
+        if let data = challenge.data(using: .utf8) {
             // Use a Codable struct or dictionary to represent the data
             let authChallenge = try! JSONDecoder().decode(AuthChallenge.self, from: data)
             let domain = authChallenge.publicKey.rpId
             let challengeData = Data(authChallenge.publicKey.challenge.utf8)
             
+            let publicKeyCredentialProvider = ASAuthorizationPlatformPublicKeyCredentialProvider(relyingPartyIdentifier: domain)
+
             // Fetch the challenge from the server. The challenge needs to be unique for each request.
             let assertionRequest = publicKeyCredentialProvider.createCredentialAssertionRequest(challenge: challengeData)
             
@@ -60,6 +72,8 @@ public class PasskeymeSDK {
             let authController = ASAuthorizationController(authorizationRequests: [ assertionRequest, passwordRequest ] )
             authController.delegate = self
             authController.presentationContextProvider = self
+
+            let preferImmediatelyAvailableCredentials = true
             
             if preferImmediatelyAvailableCredentials {
                 // If credentials are available, presents a modal sign-in sheet.
@@ -67,32 +81,29 @@ public class PasskeymeSDK {
                 // the system passes ASAuthorizationError.Code.canceled to call
                 // `AccountManager.authorizationController(controller:didCompleteWithError:)`.
                 authController.performRequests(options: .preferImmediatelyAvailableCredentials)
-            } else {
-                // If credentials are available, presents a modal sign-in sheet.
-                // If there are no locally saved credentials, the system presents a QR code to allow signing in with a
-                // passkey from a nearby device.
-                authController.performRequests()
+            // } else {
+            //     // If credentials are available, presents a modal sign-in sheet.
+            //     // If there are no locally saved credentials, the system presents a QR code to allow signing in with a
+            //     // passkey from a nearby device.
+            //     authController.performRequests()
             }
             
             isPerformingModalReqest = true
-        } catch {
-            call.reject("Invalid JSON data")
+        } else {
+            completion(.failure(NSError(domain: "PasskeymeSDK", code: -1, userInfo: [NSLocalizedDescriptionKey: "No data"])))
         }
     }
-}
 
-extension PasskeymeSDK: ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
     public func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
         if let credential = authorization.credential as? ASAuthorizationPlatformPublicKeyCredentialRegistration {
-            let credentialID = credential.credentialID.base64EncodedString()
 
             let id = credential.credentialID
             let type = "public-key"
-            let rawIdEncoded = base64UrlEncode(credential.credentialID)
-            let attestationObjectEncoded = base64UrlEncode(credential.rawAttestationObject!)
+            let rawIdEncoded = EncodingUtils.base64UrlEncode(credential.credentialID)
+            let attestationObjectEncoded = EncodingUtils.base64UrlEncode(credential.rawAttestationObject!)
             
-            if let decodedChallenge = updateClientDataJSONChallenge(from: credential.rawClientDataJSON) {
-                let clientDataEncoded = base64UrlEncode(decodedChallenge)
+            if let decodedChallenge = EncodingUtils.updateClientDataJSONChallenge(from: credential.rawClientDataJSON) {
+                let clientDataEncoded = EncodingUtils.base64UrlEncode(decodedChallenge)
 
                 let jsonString = """
                 {
@@ -114,37 +125,28 @@ extension PasskeymeSDK: ASAuthorizationControllerDelegate, ASAuthorizationContro
                 completion(.failure(NSError(domain: "PasskeymeSDK", code: -1, userInfo: [NSLocalizedDescriptionKey: "Challenge decode conversion Fail."])))
             }
         } else if let credential = authorization.credential as? ASAuthorizationPlatformPublicKeyCredentialAssertion {
-            let credentialID = credential.credentialID.base64EncodedString()
 
             if let rawAuthenticatorData = credential.rawAuthenticatorData,
                let signature = credential.signature,
                let userID = credential.userID {
                 
-                let stringUserID = String(data: userID, encoding: .utf8)
-                let stringSignature = String(data: signature, encoding: .utf8)
-                let stringAuthenticatorData = String(data: rawAuthenticatorData, encoding: .utf8)
-                
                 // Verify the below signature and clientDataJSON with your service for the given userID.
-                let rawClientDataJSON = credential.rawClientDataJSON
-                let credentialID = credential.credentialID
                 let type = "public-key"
-                let rawIdEncoded = base64UrlEncode(credential.credentialID)
+                let rawIdEncoded = EncodingUtils.base64UrlEncode(credential.credentialID)
 
-                let clientDataEncoded = base64UrlEncode(credential.rawClientDataJSON)
-                
                 let jsonString = """
                 {
                     "credential":
                     {
                         "authenticatorAttachment": "platform",
                         "id": "\(rawIdEncoded)",
-                        "type": "public-key",
+                        "type": "\(type)",
                         "rawId": "\(rawIdEncoded)",
                         "response": {
                             "clientDataJSON": "\(credential.rawClientDataJSON.base64EncodedString())",
-                            "authenticatorData": "\(base64UrlEncode(rawAuthenticatorData))",
-                            "signature": "\(base64UrlEncode(signature))",
-                            "userHandle": "\(base64UrlEncode(userID))"
+                            "authenticatorData": "\(EncodingUtils.base64UrlEncode(rawAuthenticatorData))",
+                            "signature": "\(EncodingUtils.base64UrlEncode(signature))",
+                            "userHandle": "\(EncodingUtils.base64UrlEncode(userID))"
                         }
                     }
                 }
@@ -166,74 +168,4 @@ extension PasskeymeSDK: ASAuthorizationControllerDelegate, ASAuthorizationContro
     public func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
         return UIApplication.shared.windows.first(where: { $0.isKeyWindow }) ?? UIWindow()
     }
-
-    func base64UrlEncode(_ data: Data) -> String {
-        var encodedString = data.base64EncodedString()
-        encodedString = encodedString
-            .replacingOccurrences(of: "+", with: "-")
-            .replacingOccurrences(of: "/", with: "_")
-            .trimmingCharacters(in: CharacterSet(charactersIn: "="))
-        return encodedString
-    }
-    
-    func base64UrlDecode(_ base64String: String) -> Data? {
-        var base64 = base64String
-            .replacingOccurrences(of: "-", with: "+")
-            .replacingOccurrences(of: "_", with: "/")
-        switch base64.count % 4 {
-        case 2: base64 += "=="
-        case 3: base64 += "="
-        default: break
-        }
-        return Data(base64Encoded: base64)
-    }
-    func base64UrlDecodeToStr(_ base64String: String) -> String {
-        var base64 = base64String
-            .replacingOccurrences(of: "-", with: "+")
-            .replacingOccurrences(of: "_", with: "/")
-        switch base64.count % 4 {
-        case 2: base64 += "=="
-        case 3: base64 += "="
-        default: break
-        }
-        let d = Data(base64Encoded: base64)!
-        return String(data: d, encoding: .utf8)!
-    }
-
-    func base64UrlToBase64(_ base64Url: String) -> String {
-        var base64 = base64Url
-            .replacingOccurrences(of: "-", with: "+")
-            .replacingOccurrences(of: "_", with: "/")
-        switch base64.count % 4 {
-        case 2: base64 += "=="
-        case 3: base64 += "="
-        default: break
-        }
-        return base64
-    }
-    
-    func updateClientDataJSONChallenge(from rawClientDataJSON: Data) -> Data? {
-        
-        // Decode the raw clientDataJSON to a JSON object
-        guard var clientData = try? JSONSerialization.jsonObject(with: rawClientDataJSON, options: []) as? [String: Any],
-              let base64Challenge = clientData["challenge"]
-               else {
-            return nil
-        }
-        
-        let decodedChallengeStr = base64UrlDecodeToStr(base64Challenge as? String ?? "")
-        
-        // Update the challenge field to the decoded value
-        clientData["challenge"] = decodedChallengeStr as Any
-        clientData["crossOrigin"] = false as Any
-        
-        let type = clientData["type"] as? String
-        let challenge = clientData["challenge"] as? String
-        let origin = clientData["origin"] as? String
-        
-        let updatedStr = "{\"type\":\"\(type!)\",\"challenge\":\"\(challenge!)\",\"origin\":\"\(origin!)\",\"crossOrigin\":false}"
-
-        let updatedData = updatedStr.data(using: .utf8)
-        
-        return updatedData!        
-    }}
+}

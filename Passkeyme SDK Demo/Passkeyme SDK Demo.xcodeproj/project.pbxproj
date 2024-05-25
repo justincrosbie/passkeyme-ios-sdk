@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7EAED237712B5C22347F63B7 /* Pods_Passkeyme_SDK_Demo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 762B4C8ABBB749810027E6AA /* Pods_Passkeyme_SDK_Demo.framework */; };
 		D4C1334D2C01BD11009F8BBC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C1334C2C01BD11009F8BBC /* AppDelegate.swift */; };
 		D4C1334F2C01BD11009F8BBC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C1334E2C01BD11009F8BBC /* SceneDelegate.swift */; };
 		D4C133512C01BD11009F8BBC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C133502C01BD11009F8BBC /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2802DFFC80E0848E081C41BE /* Pods-Passkeyme SDK Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Passkeyme SDK Demo.release.xcconfig"; path = "Target Support Files/Pods-Passkeyme SDK Demo/Pods-Passkeyme SDK Demo.release.xcconfig"; sourceTree = "<group>"; };
+		762B4C8ABBB749810027E6AA /* Pods_Passkeyme_SDK_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Passkeyme_SDK_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADA6307BC4B113039B333132 /* Pods-Passkeyme SDK Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Passkeyme SDK Demo.debug.xcconfig"; path = "Target Support Files/Pods-Passkeyme SDK Demo/Pods-Passkeyme SDK Demo.debug.xcconfig"; sourceTree = "<group>"; };
 		D4C133492C01BD11009F8BBC /* Passkeyme SDK Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Passkeyme SDK Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4C1334C2C01BD11009F8BBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4C1334E2C01BD11009F8BBC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7EAED237712B5C22347F63B7 /* Pods_Passkeyme_SDK_Demo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D3A3BD2FB84043E603596DD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				762B4C8ABBB749810027E6AA /* Pods_Passkeyme_SDK_Demo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		98F7C2D0D388932A7F139F50 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ADA6307BC4B113039B333132 /* Pods-Passkeyme SDK Demo.debug.xcconfig */,
+				2802DFFC80E0848E081C41BE /* Pods-Passkeyme SDK Demo.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D4C133402C01BD11009F8BBC = {
 			isa = PBXGroup;
 			children = (
 				D4C1334B2C01BD11009F8BBC /* Passkeyme SDK Demo */,
 				D4C1334A2C01BD11009F8BBC /* Products */,
+				98F7C2D0D388932A7F139F50 /* Pods */,
+				6D3A3BD2FB84043E603596DD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D4C1335D2C01BD12009F8BBC /* Build configuration list for PBXNativeTarget "Passkeyme SDK Demo" */;
 			buildPhases = (
+				7D68398A83C0A9BF55463EAA /* [CP] Check Pods Manifest.lock */,
 				D4C133452C01BD11009F8BBC /* Sources */,
 				D4C133462C01BD11009F8BBC /* Frameworks */,
 				D4C133472C01BD11009F8BBC /* Resources */,
+				B59761CD3EC86A4B54BC7762 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7D68398A83C0A9BF55463EAA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Passkeyme SDK Demo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B59761CD3EC86A4B54BC7762 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Passkeyme SDK Demo/Pods-Passkeyme SDK Demo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Passkeyme SDK Demo/Pods-Passkeyme SDK Demo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Passkeyme SDK Demo/Pods-Passkeyme SDK Demo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D4C133452C01BD11009F8BBC /* Sources */ = {
@@ -287,6 +356,7 @@
 		};
 		D4C1335E2C01BD12009F8BBC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADA6307BC4B113039B333132 /* Pods-Passkeyme SDK Demo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -315,6 +385,7 @@
 		};
 		D4C1335F2C01BD12009F8BBC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2802DFFC80E0848E081C41BE /* Pods-Passkeyme SDK Demo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

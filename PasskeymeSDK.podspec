@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   
     s.homepage         = 'https://passkeyme.com'
     s.license          = { :type => 'MIT', :file => 'LICENSE' }
-    s.author           = { 'Your Name' => 'your-email@example.com' }
+    s.author           = { 'Justin Crosbie' => 'justincrosbie@gmail.com' }
     s.source           = { :git => 'https://github.com/justincrosbie/passkeyme-ios-sdk.git', :tag => s.version.to_s }
   
     s.ios.deployment_target = '16.0'
