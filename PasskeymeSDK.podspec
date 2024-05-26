@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name             = 'PasskeymeSDK'
-    s.version          = '0.3.0'
+    s.version          = '0.4.0'
     s.summary          = 'A simple SDK for integrating passkeys with Passkeyme.com'
   
     s.description      = <<-DESC

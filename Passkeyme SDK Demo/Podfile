@@ -3,6 +3,6 @@ platform :ios, '16.0'
 target 'Passkeyme SDK Demo' do
   use_frameworks!
 
-  pod 'PasskeymeSDK', :path => '../'
+  pod 'PasskeymeSDK', "~> 0.3.0"
   pod 'Alamofire'
 end
