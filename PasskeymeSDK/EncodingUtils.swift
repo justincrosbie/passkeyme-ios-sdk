@@ -108,7 +108,7 @@ public class EncodingUtils {
     public static func createAuthenticatorJSONString(clientDataJSON: String, authenticatorData: String, signature: String, userHandle: String, rawId: String, id: String, type: String, authenticatorAttachment: String) -> String? {
         // Create a dictionary with your data
         let jsonDict: [String: Any] = [
-            "authenticatorAttachment": rawId,
+            "authenticatorAttachment": authenticatorAttachment,
             "rawId": rawId,
             "id": id,
             "type": type,

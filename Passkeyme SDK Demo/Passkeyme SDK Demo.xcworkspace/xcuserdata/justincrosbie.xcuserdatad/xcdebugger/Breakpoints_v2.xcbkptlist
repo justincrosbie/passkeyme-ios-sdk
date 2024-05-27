@@ -216,7 +216,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F21F340B-4A49-4AB8-BF98-87D6BFA50967"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Passkeyme SDK Demo/ViewController.swift"
@@ -264,7 +264,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "8C0DEE2F-54E6-4876-BC24-CDB12F087C96"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Passkeyme SDK Demo/ViewController.swift"
@@ -280,7 +280,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "F4CD8024-252C-45EF-894D-3703DB0D69CD"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Passkeyme SDK Demo/ViewController.swift"
@@ -296,7 +296,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "E5F283BB-679F-477B-ABD6-951A72DA17DD"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Passkeyme SDK Demo/ViewController.swift"
@@ -328,7 +328,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "11E57D25-9B48-4BCB-8C43-CBFB1D28E8EE"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Passkeyme SDK Demo/ViewController.swift"
@@ -338,36 +338,6 @@
             endingLineNumber = "120"
             landmarkName = "completeAuthentication(credential:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "11E57D25-9B48-4BCB-8C43-CBFB1D28E8EE - dda8d065e5a7b758"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; () in Passkeyme_SDK_Demo.ViewController.completeAuthentication(credential: Swift.String) -&gt; ()"
-                  moduleName = "Passkeyme SDK Demo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/justincrosbie/dev/passkeys/passkeyme-ios-sdk/Passkeyme%20SDK%20Demo/Passkeyme%20SDK%20Demo/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "121"
-                  endingLineNumber = "121">
-               </Location>
-               <Location
-                  uuid = "11E57D25-9B48-4BCB-8C43-CBFB1D28E8EE - dda8d065e5a7b758"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; () in Passkeyme_SDK_Demo.ViewController.completeAuthentication(credential: Swift.String) -&gt; ()"
-                  moduleName = "Passkeyme SDK Demo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/justincrosbie/dev/passkeys/passkeyme-ios-sdk/Passkeyme%20SDK%20Demo/Passkeyme%20SDK%20Demo/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "121"
-                  endingLineNumber = "121">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -384,43 +354,13 @@
             endingLineNumber = "74"
             landmarkName = "completeRegistration(credential:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "CF3C89D1-CB4E-4842-8142-B779B5105C86 - 321c1fdaacd08958"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Passkeyme_SDK_Demo.ViewController.completeRegistration(credential: Swift.String) -&gt; ()"
-                  moduleName = "Passkeyme SDK Demo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/justincrosbie/dev/passkeys/passkeyme-ios-sdk/Passkeyme%20SDK%20Demo/Passkeyme%20SDK%20Demo/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "74"
-                  endingLineNumber = "74">
-               </Location>
-               <Location
-                  uuid = "CF3C89D1-CB4E-4842-8142-B779B5105C86 - 597f7a0b2a8b1ebd"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; () in Passkeyme_SDK_Demo.ViewController.completeRegistration(credential: Swift.String) -&gt; ()"
-                  moduleName = "Passkeyme SDK Demo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/justincrosbie/dev/passkeys/passkeyme-ios-sdk/Passkeyme%20SDK%20Demo/Passkeyme%20SDK%20Demo/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "76"
-                  endingLineNumber = "76">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "CBB74890-FE90-40EE-AD75-7A7E42DA65C1"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Passkeyme SDK Demo/ViewController.swift"
@@ -436,7 +376,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "2843F94B-8CCF-41DF-844F-ED43530E8B3A"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Passkeyme SDK Demo/ViewController.swift"
@@ -452,7 +392,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "0776ECC2-9748-415B-9359-EE930D90ADF7"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Passkeyme SDK Demo/ViewController.swift"
@@ -462,36 +402,6 @@
             endingLineNumber = "191"
             landmarkName = "sendPostRequest(_:_:_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "0776ECC2-9748-415B-9359-EE930D90ADF7 - bbf156bff44d1f9f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Passkeyme_SDK_Demo.ViewController.sendPostRequest(Swift.String, Swift.Decodable &amp; Swift.Encodable, (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Passkeyme SDK Demo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/justincrosbie/dev/passkeys/passkeyme-ios-sdk/Passkeyme%20SDK%20Demo/Passkeyme%20SDK%20Demo/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "191"
-                  endingLineNumber = "191">
-               </Location>
-               <Location
-                  uuid = "0776ECC2-9748-415B-9359-EE930D90ADF7 - bbf156bff44d1f9f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (Swift.Optional&lt;Foundation.Data&gt;, Swift.Optional&lt;__C.NSURLResponse&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Passkeyme_SDK_Demo.ViewController.sendPostRequest(Swift.String, Swift.Decodable &amp; Swift.Encodable, (Swift.Result&lt;Foundation.Data, Swift.Error&gt;) -&gt; ()) -&gt; ()"
-                  moduleName = "Passkeyme SDK Demo"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/justincrosbie/dev/passkeys/passkeyme-ios-sdk/Passkeyme%20SDK%20Demo/Passkeyme%20SDK%20Demo/ViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "191"
-                  endingLineNumber = "191">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -514,7 +424,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "0471573B-B8C8-49C7-8DE5-620843FE2C98"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Passkeyme SDK Demo/ViewController.swift"
@@ -539,6 +449,102 @@
             startingLineNumber = "193"
             endingLineNumber = "193"
             landmarkName = "sendPostRequest(_:_:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "951AD163-F172-4B87-888B-912AD75203EE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Passkeyme SDK Demo/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "completeAuthentication(credential:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D45E3F1D-BF31-43D0-80A2-AEA200CEC3B6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Passkeyme SDK Demo/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "completeAuthentication(credential:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BFFCDC62-3989-4116-ADE4-CA15EA9469B0"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Passkeyme SDK Demo/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "startAuthentication()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "606BBB55-33EB-4E49-8B84-090F4B5EC84E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/PasskeymeSDK/PasskeymeSDK/EncodingUtils.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "createAuthenticatorJSONString(clientDataJSON:authenticatorData:signature:userHandle:rawId:id:type:authenticatorAttachment:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B2137162-CB56-4FF1-AD90-B995918B375C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/PasskeymeSDK/PasskeymeSDK/PasskeymeSDK.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "passkeyAuthenticate(challenge:anchor:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "94D78917-3247-4CA9-B218-86D2D91A037A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/PasskeymeSDK/PasskeymeSDK/EncodingUtils.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "createAuthenticatorJSONString(clientDataJSON:authenticatorData:signature:userHandle:rawId:id:type:authenticatorAttachment:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

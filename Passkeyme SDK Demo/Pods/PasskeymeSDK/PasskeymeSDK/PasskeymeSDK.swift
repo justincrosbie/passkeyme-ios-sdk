@@ -124,8 +124,24 @@ public class PasskeymeSDK : NSObject, ASAuthorizationControllerPresentationConte
                 let type = "public-key"
                 let rawIdEncoded = EncodingUtils.base64UrlEncode(credential.credentialID)
 
+/*
+                let jsonString = """
+                {
+                    "authenticatorAttachment": "platform",
+                    "id": "\(rawIdEncoded)",
+                    "type": "\(type)",
+                    "rawId": "\(rawIdEncoded)",
+                    "response": {
+                        "clientDataJSON": "\(credential.rawClientDataJSON.base64EncodedString())",
+                        "authenticatorData": "\(EncodingUtils.base64UrlEncode(rawAuthenticatorData))",
+                        "signature": "\(EncodingUtils.base64UrlEncode(signature))",
+                        "userHandle": "\(EncodingUtils.base64UrlEncode(userID))"
+                    }
+                }
+                """
+*/
                 let jsonString = EncodingUtils.createAuthenticatorJSONString(
-                                        clientDataJSON: EncodingUtils.base64UrlEncode(credential.rawClientDataJSON),
+                                        clientDataJSON: credential.rawClientDataJSON.base64EncodedString(),
                                         authenticatorData: EncodingUtils.base64UrlEncode(rawAuthenticatorData),
                                         signature: EncodingUtils.base64UrlEncode(signature),
                                         userHandle: EncodingUtils.base64UrlEncode(userID),
