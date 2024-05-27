@@ -57,12 +57,8 @@ class ViewController: UIViewController {
         DispatchQueue.main.async {
             self.sdk.passkeyRegister(challenge: challenge, anchor: self.view.window!) { result in
                 switch result {
-                case .success(let stringData):
-                    let data = stringData.data(using: .utf8)!
-                    if let jsonResponse = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: String] {
-                        let credential = jsonResponse["credential"]!
-                        self.completeRegistration(credential: credential)
-                    }
+                case .success(let credential):
+                    self.completeRegistration(credential: credential)
                 case .failure(let error):
                     print("Registration error: \(error)")
                 }
@@ -106,12 +102,8 @@ class ViewController: UIViewController {
         DispatchQueue.main.async {
             self.sdk.passkeyAuthenticate(challenge: challenge, anchor: self.view.window!) { result in
                 switch result {
-                case .success(let stringData):
-                    let data = stringData.data(using: .utf8)!
-                    if let jsonResponse = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: String] {
-                        let credential = jsonResponse["credential"]!
+                case .success(let credential):
                         self.completeAuthentication(credential: credential)
-                    }
                 case .failure(let error):
                     print("Authentication error: \(error)")
                 }

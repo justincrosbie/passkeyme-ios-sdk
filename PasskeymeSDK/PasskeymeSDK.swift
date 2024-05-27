@@ -105,17 +105,10 @@ public class PasskeymeSDK : NSObject, ASAuthorizationControllerPresentationConte
             if let decodedChallenge = EncodingUtils.updateClientDataJSONChallenge(from: credential.rawClientDataJSON) {
                 let clientDataEncoded = EncodingUtils.base64UrlEncode(decodedChallenge)
 
-                let jsonString = """
-                {
-                    "id": "\(rawIdEncoded)",
-                    "type": "\(type)",
-                    "rawId": "\(rawIdEncoded)",
-                    "response": {
-                        "clientDataJSON": "\(clientDataEncoded)",
-                        "attestationObject": "\(attestationObjectEncoded)",
-                    }
-                }
-                """
+                let jsonString = EncodingUtils.createAttestationJSONString(
+                                        clientDataJSON: clientDataEncoded, 
+                                        attestationObject: attestationObjectEncoded, 
+                                        rawId: rawIdEncoded, id: rawIdEncoded, type: type)!
                 
                 completion(.success(jsonString))
             } else {
@@ -131,20 +124,12 @@ public class PasskeymeSDK : NSObject, ASAuthorizationControllerPresentationConte
                 let type = "public-key"
                 let rawIdEncoded = EncodingUtils.base64UrlEncode(credential.credentialID)
 
-                let jsonString = """
-                {
-                    "authenticatorAttachment": "platform",
-                    "id": "\(rawIdEncoded)",
-                    "type": "\(type)",
-                    "rawId": "\(rawIdEncoded)",
-                    "response": {
-                        "clientDataJSON": "\(credential.rawClientDataJSON.base64EncodedString())",
-                        "authenticatorData": "\(EncodingUtils.base64UrlEncode(rawAuthenticatorData))",
-                        "signature": "\(EncodingUtils.base64UrlEncode(signature))",
-                        "userHandle": "\(EncodingUtils.base64UrlEncode(userID))"
-                    }
-                }
-                """
+                let jsonString = EncodingUtils.createAuthenticatorJSONString(
+                                        clientDataJSON: EncodingUtils.base64UrlEncode(credential.rawClientDataJSON),
+                                        authenticatorData: EncodingUtils.base64UrlEncode(rawAuthenticatorData),
+                                        signature: EncodingUtils.base64UrlEncode(signature),
+                                        userHandle: EncodingUtils.base64UrlEncode(userID),
+                                        rawId: rawIdEncoded, id: rawIdEncoded, type: type, authenticatorAttachment: "platform")!
 
                 completion(.success(jsonString))
             } else {
