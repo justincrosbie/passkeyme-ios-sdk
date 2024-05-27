@@ -74,4 +74,67 @@ public class EncodingUtils {
         
         return updatedData!        
     }
+
+    public static func createAttestationJSONString(clientDataJSON: String, attestationObject: String, rawId: String, id: String, type: String) -> String? {
+        // Create a dictionary with your data
+        let jsonDict: [String: Any] = [
+            "rawId": rawId,
+            "id": id,
+            "type": type,
+            "response": [
+                "clientDataJSON": clientDataJSON,
+                "attestationObject": attestationObject
+            ],
+        ]
+        
+        // Check if the JSON is valid and can be serialized
+        guard JSONSerialization.isValidJSONObject(jsonDict) else {
+            print("Invalid JSON object")
+            return nil
+        }
+        
+        // Serialize the dictionary to JSON data
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: jsonDict, options: [])
+            // Convert JSON data to string
+            let jsonString = String(data: jsonData, encoding: .utf8)
+            return jsonString
+        } catch {
+            print("Failed to serialize JSON: \(error)")
+            return nil
+        }
+    }
+
+    public static func createAuthenticatorJSONString(clientDataJSON: String, authenticatorData: String, signature: String, userHandle: String, rawId: String, id: String, type: String, authenticatorAttachment: String) -> String? {
+        // Create a dictionary with your data
+        let jsonDict: [String: Any] = [
+            "authenticatorAttachment": rawId,
+            "rawId": rawId,
+            "id": id,
+            "type": type,
+            "response": [
+                "clientDataJSON": clientDataJSON,
+                "authenticatorData": authenticatorData,
+                "signature": signature,
+                "userHandle": userHandle
+            ],
+        ]
+        
+        // Check if the JSON is valid and can be serialized
+        guard JSONSerialization.isValidJSONObject(jsonDict) else {
+            print("Invalid JSON object")
+            return nil
+        }
+        
+        // Serialize the dictionary to JSON data
+        do {
+            let jsonData = try JSONSerialization.data(withJSONObject: jsonDict, options: [])
+            // Convert JSON data to string
+            let jsonString = String(data: jsonData, encoding: .utf8)
+            return jsonString
+        } catch {
+            print("Failed to serialize JSON: \(error)")
+            return nil
+        }
+    }
 }

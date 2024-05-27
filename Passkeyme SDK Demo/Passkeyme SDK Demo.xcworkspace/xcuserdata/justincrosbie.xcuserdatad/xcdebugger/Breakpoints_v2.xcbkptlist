@@ -113,7 +113,7 @@
             startingLineNumber = "155"
             endingLineNumber = "155"
             landmarkName = "sendPostRequest(_:_:_:)"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -129,7 +129,7 @@
             startingLineNumber = "161"
             endingLineNumber = "161"
             landmarkName = "sendPostRequest(_:_:_:)"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -145,7 +145,7 @@
             startingLineNumber = "178"
             endingLineNumber = "178"
             landmarkName = "sendPostRequest(_:_:_:)"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -161,7 +161,7 @@
             startingLineNumber = "179"
             endingLineNumber = "179"
             landmarkName = "sendPostRequest(_:_:_:)"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -177,7 +177,7 @@
             startingLineNumber = "201"
             endingLineNumber = "201"
             landmarkName = "sendPostRequest(_:_:_:)"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -193,7 +193,7 @@
             startingLineNumber = "202"
             endingLineNumber = "202"
             landmarkName = "sendPostRequest(_:_:_:)"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -209,7 +209,7 @@
             startingLineNumber = "208"
             endingLineNumber = "208"
             landmarkName = "sendPostRequest(_:_:_:)"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -225,7 +225,7 @@
             startingLineNumber = "170"
             endingLineNumber = "170"
             landmarkName = "sendPostRequest(_:_:_:)"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -241,7 +241,7 @@
             startingLineNumber = "169"
             endingLineNumber = "169"
             landmarkName = "sendPostRequest(_:_:_:)"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -273,7 +273,7 @@
             startingLineNumber = "77"
             endingLineNumber = "77"
             landmarkName = "completeRegistration(credential:)"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -289,7 +289,7 @@
             startingLineNumber = "79"
             endingLineNumber = "79"
             landmarkName = "completeRegistration(credential:)"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -321,7 +321,7 @@
             startingLineNumber = "121"
             endingLineNumber = "121"
             landmarkName = "completeAuthentication(credential:)"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -337,7 +337,7 @@
             startingLineNumber = "120"
             endingLineNumber = "120"
             landmarkName = "completeAuthentication(credential:)"
-            landmarkType = "9">
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "11E57D25-9B48-4BCB-8C43-CBFB1D28E8EE - dda8d065e5a7b758"
@@ -374,7 +374,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "CF3C89D1-CB4E-4842-8142-B779B5105C86"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Passkeyme SDK Demo/ViewController.swift"
@@ -383,7 +383,7 @@
             startingLineNumber = "74"
             endingLineNumber = "74"
             landmarkName = "completeRegistration(credential:)"
-            landmarkType = "9">
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "CF3C89D1-CB4E-4842-8142-B779B5105C86 - 321c1fdaacd08958"
@@ -429,7 +429,7 @@
             startingLineNumber = "180"
             endingLineNumber = "180"
             landmarkName = "sendPostRequest(_:_:_:)"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -445,7 +445,7 @@
             startingLineNumber = "185"
             endingLineNumber = "185"
             landmarkName = "sendPostRequest(_:_:_:)"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -461,7 +461,7 @@
             startingLineNumber = "191"
             endingLineNumber = "191"
             landmarkName = "sendPostRequest(_:_:_:)"
-            landmarkType = "9">
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "0776ECC2-9748-415B-9359-EE930D90ADF7 - bbf156bff44d1f9f"
@@ -498,7 +498,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "84BD627A-6F70-4C90-9833-70117A9F1E38"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Passkeyme SDK Demo/ViewController.swift"
@@ -507,7 +507,7 @@
             startingLineNumber = "192"
             endingLineNumber = "192"
             landmarkName = "sendPostRequest(_:_:_:)"
-            landmarkType = "9">
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -523,7 +523,23 @@
             startingLineNumber = "195"
             endingLineNumber = "195"
             landmarkName = "sendPostRequest(_:_:_:)"
-            landmarkType = "9">
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EFAF4937-753A-429E-A3F3-031A779836BA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Passkeyme SDK Demo/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
+            landmarkName = "sendPostRequest(_:_:_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
