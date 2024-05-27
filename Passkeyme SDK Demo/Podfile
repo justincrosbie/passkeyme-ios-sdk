@@ -3,5 +3,5 @@ platform :ios, '16.0'
 target 'Passkeyme SDK Demo' do
   use_frameworks!
 
-  pod 'PasskeymeSDK', "~> 0.8.0"
+  pod 'PasskeymeSDK', "~> 0.9.0"
 end

@@ -1,16 +1,16 @@
 PODS:
-  - PasskeymeSDK (0.8.0)
+  - PasskeymeSDK (0.9.0)
 
 DEPENDENCIES:
-  - PasskeymeSDK (~> 0.8.0)
+  - PasskeymeSDK (~> 0.9.0)
 
 SPEC REPOS:
   trunk:
     - PasskeymeSDK
 
 SPEC CHECKSUMS:
-  PasskeymeSDK: 02441dc1a1eae941406395704360e25a182c3c48
+  PasskeymeSDK: bc8d87c8274f79e2e5aebb37d52861117b996243
 
-PODFILE CHECKSUM: 140f28f9eabbe443edbdedba52b6293de7f0546c
+PODFILE CHECKSUM: 4c17d5f31ebec1ad387ce4da673d5e7acbe4b750
 
 COCOAPODS: 1.15.2
