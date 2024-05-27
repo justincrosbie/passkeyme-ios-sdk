@@ -107,15 +107,12 @@ public class PasskeymeSDK : NSObject, ASAuthorizationControllerPresentationConte
 
                 let jsonString = """
                 {
-                    "credential":
-                    {
-                        "id": "\(String(data: id, encoding: .utf8) ?? "")",
-                        "type": "\(type)",
-                        "rawId": "\(rawIdEncoded)",
-                        "response": {
-                            "clientDataJSON": "\(clientDataEncoded)",
-                            "attestationObject": "\(attestationObjectEncoded)",
-                        }
+                    "id": "\(rawIdEncoded)",
+                    "type": "\(type)",
+                    "rawId": "\(rawIdEncoded)",
+                    "response": {
+                        "clientDataJSON": "\(clientDataEncoded)",
+                        "attestationObject": "\(attestationObjectEncoded)",
                     }
                 }
                 """
@@ -136,18 +133,15 @@ public class PasskeymeSDK : NSObject, ASAuthorizationControllerPresentationConte
 
                 let jsonString = """
                 {
-                    "credential":
-                    {
-                        "authenticatorAttachment": "platform",
-                        "id": "\(rawIdEncoded)",
-                        "type": "\(type)",
-                        "rawId": "\(rawIdEncoded)",
-                        "response": {
-                            "clientDataJSON": "\(credential.rawClientDataJSON.base64EncodedString())",
-                            "authenticatorData": "\(EncodingUtils.base64UrlEncode(rawAuthenticatorData))",
-                            "signature": "\(EncodingUtils.base64UrlEncode(signature))",
-                            "userHandle": "\(EncodingUtils.base64UrlEncode(userID))"
-                        }
+                    "authenticatorAttachment": "platform",
+                    "id": "\(rawIdEncoded)",
+                    "type": "\(type)",
+                    "rawId": "\(rawIdEncoded)",
+                    "response": {
+                        "clientDataJSON": "\(credential.rawClientDataJSON.base64EncodedString())",
+                        "authenticatorData": "\(EncodingUtils.base64UrlEncode(rawAuthenticatorData))",
+                        "signature": "\(EncodingUtils.base64UrlEncode(signature))",
+                        "userHandle": "\(EncodingUtils.base64UrlEncode(userID))"
                     }
                 }
                 """

@@ -20,6 +20,7 @@
 		2802DFFC80E0848E081C41BE /* Pods-Passkeyme SDK Demo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Passkeyme SDK Demo.release.xcconfig"; path = "Target Support Files/Pods-Passkeyme SDK Demo/Pods-Passkeyme SDK Demo.release.xcconfig"; sourceTree = "<group>"; };
 		762B4C8ABBB749810027E6AA /* Pods_Passkeyme_SDK_Demo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Passkeyme_SDK_Demo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADA6307BC4B113039B333132 /* Pods-Passkeyme SDK Demo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Passkeyme SDK Demo.debug.xcconfig"; path = "Target Support Files/Pods-Passkeyme SDK Demo/Pods-Passkeyme SDK Demo.debug.xcconfig"; sourceTree = "<group>"; };
+		D49B4D762C04663E00D7F2D8 /* Passkeyme SDK Demo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Passkeyme SDK Demo.entitlements"; sourceTree = "<group>"; };
 		D4C133492C01BD11009F8BBC /* Passkeyme SDK Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Passkeyme SDK Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4C1334C2C01BD11009F8BBC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4C1334E2C01BD11009F8BBC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,7 +57,6 @@
 				ADA6307BC4B113039B333132 /* Pods-Passkeyme SDK Demo.debug.xcconfig */,
 				2802DFFC80E0848E081C41BE /* Pods-Passkeyme SDK Demo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -81,6 +81,7 @@
 		D4C1334B2C01BD11009F8BBC /* Passkeyme SDK Demo */ = {
 			isa = PBXGroup;
 			children = (
+				D49B4D762C04663E00D7F2D8 /* Passkeyme SDK Demo.entitlements */,
 				D4C1334C2C01BD11009F8BBC /* AppDelegate.swift */,
 				D4C1334E2C01BD11009F8BBC /* SceneDelegate.swift */,
 				D4C133502C01BD11009F8BBC /* ViewController.swift */,
@@ -360,9 +361,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Passkeyme SDK Demo/Passkeyme SDK Demo.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PNHF5Y3KD5;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Passkeyme SDK Demo/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -370,6 +373,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -389,9 +393,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Passkeyme SDK Demo/Passkeyme SDK Demo.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = PNHF5Y3KD5;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Passkeyme SDK Demo/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -399,6 +405,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
