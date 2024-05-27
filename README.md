@@ -1,7 +1,7 @@
 ![alt text](https://passkeyme.com/docs/img/passkeyme-logo-removebg-preview.png)
 # Passkeyme iOS SDK
 
-Passkeyme Web SDK is a convenience SDK for the Passkeyme platform JavaScript/TypeScript library that provides simple functions to handle passkey registration and authentication using the WebAuthn API. This library helps you integrate passkey-based authentication into your web applications with ease.
+Passkeyme Web SDK is a convenience SDK for the Passkeyme platform iOS that provides simple functions to handle passkey registration and authentication using the AuthenticationServices API. This library helps you integrate passkey-based authentication into your web applications with ease.
 
 See [Passkeyme](https://passkeyme.com)
 
@@ -93,7 +93,7 @@ API_KEY=
 ```
 
 You'll need to run it behind an addressible domain for Passkeys to work. You can host it, or use ngrok to serve it.
-You'll need to follow the istructions at https://passkeyme.com/docs/docs/SDKs/swift-sdk
+You'll need to follow the instructions at https://passkeyme.com/docs/docs/SDKs/swift-sdk
 
 ```
 import UIKit
